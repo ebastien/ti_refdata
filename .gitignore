@@ -1,0 +1,10 @@
+/.bundle
+/vendor/bundle/
+/bin
+/spec/test_app/log/*.log
+/spec/test_app/db/schema.rb
+/spec/test_app/db/*.sqlite3
+/spec/test_app/db/migrate/*.ti_refdata.rb
+/spec/test_app/tmp
+.ruby-version
+Gemfile.lock
