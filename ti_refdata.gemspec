@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Reference data server."
   s.description = "TiRefdata serves resources on open travel data."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.17"
   s.add_dependency "rails-api"
