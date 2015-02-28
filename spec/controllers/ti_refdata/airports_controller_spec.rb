@@ -43,7 +43,6 @@ describe TiRefdata::AirportsController do
     end
 
     it 'returns an error without authentication' do
-      pending("authentication not implemented")
       get :index
       expect(response.status).to eq(401)
     end
@@ -76,7 +75,6 @@ describe TiRefdata::AirportsController do
     end
 
     it 'returns an error without authentication' do
-      pending("authentication not implemented")
       get :show, id: 'CDG'
       expect(response.status).to eq(401)
     end

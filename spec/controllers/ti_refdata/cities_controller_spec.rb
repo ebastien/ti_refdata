@@ -45,7 +45,6 @@ describe TiRefdata::CitiesController do
     end
 
     it 'returns an error without authentication' do
-      pending("authentication not implemented")
       get :index
       expect(response.status).to eq(401)
     end
@@ -78,7 +77,6 @@ describe TiRefdata::CitiesController do
     end
 
     it 'returns an error without authentication' do
-      pending("authentication not implemented")
       get :show, id: 'NCE'
       expect(response.status).to eq(401)
     end

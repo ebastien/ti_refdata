@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.17"
   s.add_dependency "rails-api"
   s.add_dependency "active_model_serializers", "~> 0.7.0"
+  s.add_dependency "ti_devise_auth"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
