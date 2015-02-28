@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 module TiRefdata
-  class AirportsController < ApplicationController
+  class AirportsController < TiRefdata::ApplicationController
     ensure_signed_in
 
     def index

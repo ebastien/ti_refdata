@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 module TiRefdata
-  class CitiesController < ApplicationController
+  class CitiesController < TiRefdata::ApplicationController
     ensure_signed_in
 
     def index

@@ -30,7 +30,6 @@ describe TiRefdata::CountriesController do
     end
 
     it 'returns an error without authentication' do
-      pending("authentication not implemented")
       get :index
       expect(response.status).to eq(401)
     end
