@@ -8,3 +8,6 @@
 /spec/test_app/tmp
 .ruby-version
 Gemfile.lock
+
+# text editor temp files
+*[~#]
