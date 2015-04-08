@@ -25,11 +25,12 @@ describe TiRefdata::Airline do
 
   it 'filters out non regular airlines' do
     a1 = Fabricate(:airline)
+    a2 = Fabricate(:airline_nil_values)
     Fabricate(:dummy_airline)
     Fabricate(:gds)
     Fabricate(:cargo_airline)
     Fabricate(:railway)
 
-    expect(TiRefdata::Airline.regular_airline).to eq([a1])
+    expect(TiRefdata::Airline.regular_airline).to eq([a1,a2])
   end
 end

@@ -10,7 +10,7 @@ module TiRefdata
     end
 
     def self.regular_airline
-      where("type_code NOT IN ('C','D','G','R')")
+      where("(type_code IS NULL) OR (type_code NOT IN ('C','D','G','R'))")
     end
   end
 end

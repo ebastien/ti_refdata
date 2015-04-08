@@ -12,6 +12,18 @@ Fabricator(:airline, class_name: TiRefdata::Airline) do
   page_rank 0.8
 end
 
+Fabricator(:airline_nil_values, class_name: TiRefdata::Airline) do
+  unified_code 'air-ryanair'
+  name 'Ryanair'
+  icao_code 'RYR'
+  iata_code 'FR'
+  numeric_code 0
+  alliance_code nil
+  alliance_status nil
+  type_code nil
+  page_rank 1.0
+end
+
 Fabricator(:dummy_airline, class_name: TiRefdata::Airline) do
   unified_code '7X'
   name 'Amadeus Seven'
