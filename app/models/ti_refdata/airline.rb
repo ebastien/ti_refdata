@@ -3,7 +3,7 @@
 module TiRefdata
   class Airline < ActiveRecord::Base
     attr_accessible :unified_code, :icao_code, :iata_code, :numeric_code,
-                    :name, :name_acsii, :name2_acsii,
+                    :name, :name_ascii, :name2_ascii,
                     :alliance_code, :alliance_status,
                     :type_code, :page_rank
 
