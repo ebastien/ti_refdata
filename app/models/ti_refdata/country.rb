@@ -2,7 +2,7 @@
 
 module TiRefdata
   class Country < ActiveRecord::Base
-    attr_accessible :code, :display_name, :name, :region, :page_rank
+    attr_accessible :code, :name, :name_acsii, :region, :page_rank
 
     has_many :cities
   end
