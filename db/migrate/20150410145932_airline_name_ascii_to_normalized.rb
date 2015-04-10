@@ -3,8 +3,10 @@ class AirlineNameAsciiToNormalized < ActiveRecord::Migration
     rename_column :airlines, :name_ascii, :name_normalized
     rename_column :airlines, :name2_ascii, :name2_normalized
     TiRefdata::Airline.find_each do |airline|
-      airline.name_normalized.gsub!(/[^a-z]/,' ')
-      airline.name2_normalized.gsub!(/[^a-z]/,' ')
+      airline.name_normalized =
+          airline.name_normalized.gsub(/[^a-z]/,' ') if airline.name_normalized
+      airline.name2_normalized =
+          airline.name2_normalized.gsub(/[^a-z]/,' ') if airline.name2_normalized
       airline.save
     end
   end
