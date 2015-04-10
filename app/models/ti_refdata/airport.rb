@@ -2,7 +2,7 @@
 
 module TiRefdata
   class Airport < ActiveRecord::Base
-    attr_accessible :code, :name, :name_ascii, :latitude, :longitude, :page_rank
+    attr_accessible :code, :name, :name_normalized, :latitude, :longitude, :page_rank
 
     belongs_to :city
     belongs_to :country

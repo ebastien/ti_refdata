@@ -2,7 +2,7 @@
 
 module TiRefdata
   class City < ActiveRecord::Base
-    attr_accessible :code, :name, :name_ascii, :latitude, :longitude, :page_rank
+    attr_accessible :code, :name, :name_normalized, :latitude, :longitude, :page_rank
 
     belongs_to :country
   end

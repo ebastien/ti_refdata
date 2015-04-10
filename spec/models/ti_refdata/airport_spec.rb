@@ -8,7 +8,7 @@ describe TiRefdata::Airport do
     fr.save
     cdg = TiRefdata::Airport.new code: 'CDG'
     cdg.name = 'Paris - Charles-de-Gaulle'
-    cdg.name_ascii = 'paris - charles-de-gaulle'
+    cdg.name_normalized = 'paris - charles-de-gaulle'
     cdg.latitude = 49.01278
     cdg.longitude = 2.55
     cdg.country = fr
@@ -16,7 +16,7 @@ describe TiRefdata::Airport do
     c = TiRefdata::Airport.find cdg.id
     expect(c.code).to eq('CDG')
     expect(c.name).to eq('Paris - Charles-de-Gaulle')
-    expect(c.name_ascii).to eq('paris - charles-de-gaulle')
+    expect(c.name_normalized).to eq('paris - charles-de-gaulle')
     expect(c.latitude).to eq(49.01278)
     expect(c.longitude).to eq(2.55)
     expect(c.country.code).to eq('FR')

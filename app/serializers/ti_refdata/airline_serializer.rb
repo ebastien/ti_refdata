@@ -14,7 +14,7 @@ module TiRefdata
     end
 
     def name2
-      name2_ascii
+      name2_normalized
     end
   end
 end

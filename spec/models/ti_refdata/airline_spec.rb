@@ -5,7 +5,7 @@ describe TiRefdata::Airline do
   it 'persists to the store' do
     airl = TiRefdata::Airline.new unified_code: '6X'
     airl.name = 'Amadeus Six'
-    airl.name_ascii = 'amadeus six'
+    airl.name_normalized = 'amadeus six'
     airl.icao_code = 'XYB'
     airl.iata_code = '6X'
     airl.numeric_code = 172
@@ -16,7 +16,7 @@ describe TiRefdata::Airline do
     c = TiRefdata::Airline.find airl.id
     expect(c.unified_code).to eq('6X')
     expect(c.name).to eq('Amadeus Six')
-    expect(c.name_ascii).to eq('amadeus six')
+    expect(c.name_normalized).to eq('amadeus six')
     expect(c.icao_code).to eq('XYB')
     expect(c.iata_code).to eq('6X')
     expect(c.numeric_code).to eq(172)
