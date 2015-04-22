@@ -4,10 +4,11 @@ require "i18n"
 
 module TiRefdata
   class PorManager
-    TMP_OPTD_POR = './tmp/optd_por_public.csv'
-    TMP_OPTD_AIRLINES = './tmp/optd_airlines.csv'
-    TMP_OPTD_AIRCRAFT = './tmp/optd_aircraft.csv'
-    TMP_OPTD_REGION_DETAILS = './tmp/optd_region_details.csv'
+    TMP_DIR = './tmp'
+    TMP_OPTD_POR = TMP_DIR + '/optd_por_public.csv'
+    TMP_OPTD_AIRLINES = TMP_DIR + '/optd_airlines.csv'
+    TMP_OPTD_AIRCRAFT = TMP_DIR + '/optd_aircraft.csv'
+    TMP_OPTD_REGION_DETAILS = TMP_DIR + '/optd_region_details.csv'
 
     OPTD_POR_SOURCE = 'https://raw.githubusercontent.com/opentraveldata/opentraveldata/master/opentraveldata/optd_por_public.csv'
     OPTD_AIRLINES_SOURCE = 'https://raw.githubusercontent.com/opentraveldata/opentraveldata/master/opentraveldata/optd_airlines.csv'
@@ -126,23 +127,23 @@ module TiRefdata
       end
     end
 
-    def self.update_optd_por_csv
-      http_proxy = TIPortal::Settings.app['http_proxy']
+    def self.update_optd_por_csv(http_proxy = '')
+      Dir.mkdir(TMP_DIR) unless File.exists?(TMP_DIR)
       system("curl -s -S -L -f -x \"#{http_proxy}\" -o #{TMP_OPTD_POR} #{OPTD_POR_SOURCE}")
     end
 
-    def self.update_optd_countries_csv
-      http_proxy = TIPortal::Settings.app['http_proxy']
+    def self.update_optd_countries_csv(http_proxy = '')
+      Dir.mkdir(TMP_DIR) unless File.exists?(TMP_DIR)
       system("curl -s -S -L -f -x \"#{http_proxy}\" -o #{TMP_OPTD_REGION_DETAILS} #{OPTD_REGION_DETAILS_SOURCE}")
     end
 
-    def self.update_optd_airlines_csv
-      http_proxy = TIPortal::Settings.app['http_proxy']
+    def self.update_optd_airlines_csv(http_proxy = '')
+      Dir.mkdir(TMP_DIR) unless File.exists?(TMP_DIR)
       system("curl -s -S -L -f -x \"#{http_proxy}\" -o #{TMP_OPTD_AIRLINES} #{OPTD_AIRLINES_SOURCE}")
     end
 
-    def self.update_optd_aircraft_csv
-      http_proxy = TIPortal::Settings.app['http_proxy']
+    def self.update_optd_aircraft_csv(http_proxy = '')
+      Dir.mkdir(TMP_DIR) unless File.exists?(TMP_DIR)
       system("curl -s -S -L -f -x \"#{http_proxy}\" -o #{TMP_OPTD_AIRCRAFT} #{OPTD_AIRCARFT_SOURCE}")
     end
   end

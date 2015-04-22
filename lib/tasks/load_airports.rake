@@ -1,14 +1,14 @@
-require "por_manager"
+require 'ti_refdata/por_manager'
 
 namespace :db do
   desc "Load airports database from opentraveldata"
-  task :load_airports => ['db:load_countries', 'db:load_cities'] do
+  task :load_airports, [:http_proxy] => ['db:load_countries', 'db:load_cities'] do |t, args|
 
-    unless PorManager.update_optd_por_csv()
+    unless TiRefdata::PorManager.update_optd_por_csv(args[:http_proxy])
       raise RuntimeError, "Unable to download airports data"
     end
     
-    PorManager.update_airports()
+    TiRefdata::PorManager.update_airports()
     
     puts "Airports: #{TiRefdata::Airport.all.map(&:code).join(',')}"
   end
