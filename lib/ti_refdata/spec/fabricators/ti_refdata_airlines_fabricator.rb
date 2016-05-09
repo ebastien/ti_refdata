@@ -1,4 +1,11 @@
 # encoding: utf-8
+require 'ti_refdata/por_manager'
+
+class TiRefdata::Airline
+  def name_normalized
+    read_attribute(:name_normalized) || TiRefdata::PorManager.normalize_name(name)
+  end
+end
 
 Fabricator(:airline, class_name: TiRefdata::Airline) do
   unified_code 'air-alitalia'
